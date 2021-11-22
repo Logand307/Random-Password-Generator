@@ -49,6 +49,29 @@ function determineUppercase() {
     return uppercaseCheck;
 }
 
+function determineNumbers() {
+    numberCheck = prompt("Do you want to include numbers in your password? \n(Yes or No)");
+    numberCheck = numberCheck.toLowerCase();
+
+    if (numberCheck === null || numberCheck === "") {
+        alert("Please answer Yes or No");
+        determineNumbers();
+
+    } else if (numberCheck === "yes" || numberCheck === "y") {
+        numberCheck = true;
+        return numberCheck;
+
+    } else if (numberCheck === "no" || numberCheck === "n") {
+        numberCheck = false;
+        return numberCheck;
+
+    } else {
+        alert("Please answer Yes or No");
+        determineNumbers();
+    }
+    return numberCheck;
+}
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
